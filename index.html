@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+    <body>
+        <div class="game-container">
+            <h1>Blackjack</h1>
+            <p id="message-el">Want to play a round?</p>
+            
+            <div class="cards-container" id="cards-container">
+                <!-- Cards will be inserted here -->
+            </div>
+            
+            <p id="sum-el">Sum: 0</p>
+            <button onclick="startGame()">START GAME</button>
+            <button onclick="newCard()">NEW CARD</button>
+            <button onclick="resetGame()">RESET GAME</button>
+
+            <p id="player-el"></p>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
+
+

@@ -1,0 +1,162 @@
+body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+            background-image: url("image.jpg");
+            background-size: cover;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            color: goldenrod;
+        }
+
+        #message-el {
+            font-style: italic;
+        }
+
+        button {
+            color: #016f32;
+            width: 150px;
+            background: goldenrod;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-weight: bold;
+            border: none;
+            border-radius: 2px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+        button:hover {
+            background-color: #dab100;
+            cursor: pointer;
+        }
+        button:active {
+            background-color: #dab100;
+            cursor: pointer;
+        }
+        .game-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px black;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Card styling */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .card {
+            width: 100px;
+            height: 140px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            color: black;
+            position: relative;
+            transform-origin: center bottom;
+            animation: dealCard 0.3s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card.hearts, .card.diamonds {
+            color: red;
+        }
+
+        .card.spades, .card.clubs {
+            color: black;
+        }
+
+        .card-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .card-suit {
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .card-value-bottom {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 5px;
+            transform: rotate(180deg);
+        }
+
+        @keyframes dealCard {
+            from {
+                transform: translateY(-50px) rotate(-10deg);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Win/Lose animations */
+        @keyframes winPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes loseShake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        
+        .win-effect {
+            animation: winPulse 0.5s ease-in-out infinite;
+            box-shadow: 0 0 15px gold;
+        }
+        
+        .lose-effect {
+            animation: loseShake 0.5s ease-in-out;
+            filter: grayscale(70%);
+        }
+        
+        /* Result overlay */
+        .result-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .result-win {
+            color: gold;
+            animation: winPulse 1s ease-in-out infinite;
+        }
+        
+        .result-lose {
+            color: #ff3333;
+            animation: loseShake 0.5s ease-in-out;
+        }
