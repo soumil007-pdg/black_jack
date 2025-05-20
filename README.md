@@ -1,5 +1,5 @@
 # Blackjack Game
-🔗 [Click here to view the live site]((https://soumil007-pdg.github.io/black_jack/))
+🔗 [Click here to view the live site](https://soumil007-pdg.github.io/black_jack/)
 
 
 A visually enhanced blackjack card game with interactive UI and card animations.
